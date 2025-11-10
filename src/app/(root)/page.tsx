@@ -1,7 +1,9 @@
-import React from "react";
-
 const RootPage = () => {
-  return <div>RootPage</div>;
-};
+  return (
+    <main>
+      <h1 className="heading-1 font-clashDisplay">Long Tran Quang</h1>
+    </main>
+  )
+}
 
-export default RootPage;
+export default RootPage
