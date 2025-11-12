@@ -89,10 +89,7 @@ const Header = () => {
     <header className="w-full">
       <div className="fixed z-50 flex w-full items-center justify-between p-[0.75rem] mix-blend-difference sm:p-[1rem]">
         {/* logo */}
-        <Link
-          href="/"
-          className="font-clashDisplay text-[1.25rem] tracking-[-0.025rem] text-primary-foreground sm:text-[1.5rem]"
-        >
+        <Link href="/" className="paragraph-accent text-primary-foreground">
           ltrq<span className="text-[#43E4DE]">.</span> {/* original color #BC1B21 */}
         </Link>
 
@@ -127,7 +124,13 @@ const Header = () => {
               <Link
                 href={item.href}
                 onClick={closeMenu}
-                className="relative block text-center font-clashDisplay text-[4rem] leading-[0.95] tracking-[-0.04rem] text-primary-foreground transition-opacity will-change-transform hover:opacity-60 sm:text-[9rem]"
+                className={cn(
+                  'paragraph-link relative block text-center uppercase text-primary-foreground will-change-transform',
+                  // Base cho underline: pseudo-element ẩn ban đầu
+                  "after:absolute after:bottom-0 after:left-0 after:h-[0.08rem] after:w-0 after:bg-primary-foreground after:transition-all after:duration-700 after:ease-out after:content-['']",
+                  // Hover: chạy từ trái sang phải
+                  'hover:after:w-full',
+                )}
               >
                 {item.label}
               </Link>

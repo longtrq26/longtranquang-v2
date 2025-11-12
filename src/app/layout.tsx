@@ -1,76 +1,12 @@
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const clashDisplay = localFont({
-  src: [
-    {
-      path: '../assets/fonts/ClashDisplay/Fonts/OTF/ClashDisplay-Extralight.otf',
-      weight: '200',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/ClashDisplay/Fonts/OTF/ClashDisplay-Light.otf',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/ClashDisplay/Fonts/OTF/ClashDisplay-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/ClashDisplay/Fonts/OTF/ClashDisplay-Medium.otf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/ClashDisplay/Fonts/OTF/ClashDisplay-Semibold.otf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/ClashDisplay/Fonts/OTF/ClashDisplay-Bold.otf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-clash-display',
-  display: 'swap',
-})
-
-const spaceGrotesk = localFont({
-  src: [
-    {
-      path: '../assets/fonts/SpaceGrotesk/Fonts/OTF/SpaceGrotesk-Light.otf',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/SpaceGrotesk/Fonts/OTF/SpaceGrotesk-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/SpaceGrotesk/Fonts/OTF/SpaceGrotesk-Medium.otf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/SpaceGrotesk/Fonts/OTF/SpaceGrotesk-SemiBold.otf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../assets/fonts/SpaceGrotesk/Fonts/OTF/SpaceGrotesk-Bold.otf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-space-grotesk',
-  display: 'swap',
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
 })
 
 export const metadata: Metadata = {
@@ -85,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${clashDisplay.variable} ${spaceGrotesk.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased`}>
         {children}
         <Analytics />
         <SpeedInsights />
