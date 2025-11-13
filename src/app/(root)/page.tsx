@@ -1,7 +1,7 @@
 const RootPage = () => {
   return (
     <div>
-      <h1 className="heading-1 font-clashDisplay">Long Tran Quang</h1>
+      <h1 className="heading-1">Main</h1>
     </div>
   )
 }

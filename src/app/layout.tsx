@@ -1,12 +1,13 @@
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Fira_Mono } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
-  variable: '--font-inter',
+const firaMono = Fira_Mono({
+  variable: '--font-fira-mono',
   subsets: ['latin'],
+  weight: ['400', '500', '700'],
 })
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${firaMono.variable} antialiased`}>
         {children}
         <Analytics />
         <SpeedInsights />
